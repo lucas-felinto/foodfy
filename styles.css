@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;500;700;900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+/* CABEÇALHO */
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: left;
+    margin-top: 20px;
+    display: block;
+    position: relative;
+}
+
+div#menu img {
+    left: 15%;
+    margin: 5px;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    position: absolute;
+    right: 60%;
+    top: 13px;
+
+    color: #111111;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #111111;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+    list-style: none;
+}
+
+/* DESCRIPTION */
+
+section#container {
+    width: 940px;
+    height: 366px;
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    position: relative;
+    margin: 10px auto;
+} 
+
+#chef {
+    position: absolute;
+    right: 7%;
+    bottom: 0;
+}
+
+#description {
+    position: absolute;
+    margin-top: 11%;
+    margin-left: 8%;
+}
+
+#description h1 {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 32px;
+    color: #111111;
+    width: 330px;
+}
+
+#description h3 {
+    opacity: 0.7;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 18px;
+    color: #000000;
+    line-height: 28px;
+    width: 316px;
+    margin-top: 2px;
+    padding: 2px;
+}
+
+
+/* RECEIPES INDEX */
+
+#tittle {
+    font-family: 'Roboto-Bold';
+    font-size: 15px;
+    color: #111111;
+
+    margin-top: 50px;
+    position: absolute;
+    left: 15%;
+}
+
+.main-receipes {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 100px;
+    margin-left: 15%;
+    margin-bottom: 80px;
+    width: 900px;
+    gap: 20px;
+}
+
+div.receipe img {
+    width: 300px;
+    height: 140px;
+    border-radius: 15px;
+}
+
+div.plate {
+    font-family: 'Roboto-Regular';
+    font-size: 16px;
+    color: #111111;
+    padding: 2px;
+}
+
+div.name {
+    font-family: 'Roboto-Regular';
+    font-weight: 500;
+    font-size: 14px;
+    color: #777777;
+    padding: 2px;
+}
+
+footer {
+    background-color: #eeeeee;
+    border-top: 1px solid #eeeeee;
+    text-align: center;
+    color: #999999;
+    font-family: 'Roboto-Regular';
+    
+    padding: 20px;
+    position: absolute;
+    width: 97%;
+    bottom: -400px;
+}
+
+/* ABOUT */
+
+main#about {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    width: 1000px;
+    margin-top: 40px;
+}
+
+#tittle-about {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.tittle-2 {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #111111;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+div.text-content {
+    font-family: 'Roboto-Regular';
+    font-weight: 500;
+    font-size: 19px;
+    color: #444444;
+    line-height: 28px;
+    margin-top: 20px;
+}
+
+/* RECEIPES PAGE */
+
+#container-receipes {
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 15%;
+        width: 900px;
+        gap: 20px;
+    }
+
+/* MODAL */
+
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: #ffffff;
+    top: 25%;
+    width: 530px;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: 16px;
+
+    position: relative;
+}
+
+div.img-modal img {
+    position: absolute;
+    width: 480px;
+    height: 200px;
+    margin: 24px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.tittle-modal {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    top: 69%;
+
+    font-family: 'Roboto-Regular';
+    font-size: 22px;
+    color: #111111;
+}
+
+.chef-modal {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    top: 72%;
+
+    font-family: 'Roboto-Regular';
+    color: #777777;
+}
+
+#buttom-close {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    top: 74%;
+    padding: 12px;
+    
+    background-color: rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+}
+
+#buttom-close a {
+    text-decoration: none;
+    font-family: 'Roboto-Regular';
+    font-size: 16px;
+    color: #999999;
+}
+
+/* ACTIVED MODAL */
+
+.modal-overlay.actived {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.overflow {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
