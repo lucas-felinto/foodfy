@@ -1,0 +1,26 @@
+{
+  "name": "foodfy",
+  "version": "1.0.0",
+  "description": "Site de receitas para a empresa Foodfy",
+  "main": "scripts.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas-felinto/foodfy.git"
+  },
+  "keywords": [],
+  "author": "Lucas Felinto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucas-felinto/foodfy/issues"
+  },
+  "homepage": "https://github.com/lucas-felinto/foodfy#readme"
+}
