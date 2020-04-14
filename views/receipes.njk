@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="receitas foodfy">
-    <link rel="stylesheet" href="styles.css">
-    <title>Foodfy</title>
-</head>
+{% extends "layout.njk" %}
 
-<body>
-    <header>
-        <div id="menu">
-            <a href="index.html"><img src="_imgs/logo.png" id="logo" alt="logo foodfy"/></a> 
-            <nav>
-                <ul>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="receipes.html"><b>Receitas</b></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% block content %}
 
     <div id="container-receipes" class="main-receipes">
         <!-- <div class="main-receipes"> -->
@@ -240,17 +222,6 @@
         </div>
 
     </div>
-
-    <footer class="footer-receipes">
-        <p>
-            Todos direitos reservados, receitas Foodfy.
-        </p>
-    </footer>
-
-    <a href="">
-        <script src="scripts.js"></script>
-        <script src="tests.js"></script>
-    </a>
-
-</body>
-</html>
+    <script src="scripts.js"></script>
+    
+{% endblock %}
