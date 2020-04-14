@@ -11,9 +11,11 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #111;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 62px;
 }
 
 header {
@@ -96,18 +98,7 @@ section#container {
 
 /* RECEIPES INDEX */
 
-#tittle {
-    font-family: 'Roboto-Bold';
-    font-size: 15px;
-    color: #111111;
-
-    margin-top: 50px;
-    position: absolute;
-    left: 15%;
-}
-
 .main-receipes {
-    position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 100px;
@@ -124,31 +115,28 @@ div.receipe img {
 }
 
 div.plate {
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto-Regular', sans-serif;
     font-size: 16px;
     color: #111111;
     padding: 2px;
 }
 
 div.name {
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto-Regular', sans-serif;
     font-weight: 500;
     font-size: 14px;
     color: #777777;
     padding: 2px;
 }
 
+
 footer {
-    background-color: #eeeeee;
-    border-top: 1px solid #eeeeee;
+    width: 100%;
+    background-color: #EEE;
     text-align: center;
-    color: #999999;
-    font-family: 'Roboto-Regular';
-    
-    padding: 20px;
+    padding: 23px 0;
     position: absolute;
-    width: 97%;
-    bottom: -400px;
+    bottom: 0;
 }
 
 /* ABOUT */
@@ -179,7 +167,7 @@ main#about {
 }
 
 div.text-content {
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto-Regular', sans-serif;
     font-weight: 500;
     font-size: 19px;
     color: #444444;
@@ -198,89 +186,106 @@ div.text-content {
         gap: 20px;
     }
 
-/* MODAL */
-
-.modal-overlay {
-    background: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-
-    opacity: 0;
-    visibility: hidden;
+a {
+    text-decoration: none;
 }
+/* RECEIPE_PAGE */
 
-.modal {
-    background-color: #ffffff;
-    top: 25%;
-    width: 530px;
-    height: 340px;
-    margin: 0 auto;
-    border-radius: 16px;
-
+main#page-r {
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
-div.img-modal img {
-    position: absolute;
-    width: 480px;
-    height: 200px;
-    margin: 24px;
+#apresentation {
     text-align: center;
-    border-radius: 10px;
 }
 
-.tittle-modal {
-    position: relative;
-    margin: auto;
-    text-align: center;
-    top: 69%;
+.layout-img img {
+    width: 930px;
+    height: 280px;
+    border-radius: 15px;
+    margin-top: 5%;
+} 
 
-    font-family: 'Roboto-Regular';
-    font-size: 22px;
+.tittle-r {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
     color: #111111;
+    margin-top: 3%;
 }
 
-.chef-modal {
-    position: relative;
-    margin: auto;
-    text-align: center;
-    top: 72%;
-
-    font-family: 'Roboto-Regular';
+.chef {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 20px;
     color: #777777;
 }
 
-#buttom-close {
+div.ingre-tittle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     position: relative;
-    margin: auto;
-    text-align: center;
-    top: 74%;
-    padding: 12px;
-    
-    background-color: rgba(0, 0, 0, 0.12);
+    margin-bottom: 1.6%;
+}
 
+div.ingre-tittle h1 {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 24px;
+    color: #111111;
+}
+
+div.ingre-tittle a {
+    position: absolute;
+    margin-left: 165px;
+    margin-top: 7px;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 12px;
+    color: #999999;
     cursor: pointer;
 }
 
-#buttom-close a {
-    text-decoration: none;
-    font-family: 'Roboto-Regular';
-    font-size: 16px;
-    color: #999999;
+.ingredientes {
+    margin-left: 220px;
+    margin-top: 3.9%;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    max-width: 930px;
 }
 
-/* ACTIVED MODAL */
-
-.modal-overlay.actived {
-    opacity: 1;
-    visibility: visible;
+.preparo {
+    margin-top: 3.1%;
+    margin-left: 220px;
+    max-width: 930px;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
 }
 
-body.overflow {
-    overflow: hidden;
+.preparo .ingre-tittle a {
+    margin-left: 220px;
 }
 
-a {
-    text-decoration: none;
+.info {
+    margin-top: 3.1%;
+    margin-left: 220px;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    max-width: 930px;
+}
+
+.info .ingre-tittle a {
+    margin-left: 305px;
+}
+
+#page-r .content.hidden {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    line-height: 0;
 }

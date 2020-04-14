@@ -1,0 +1,51 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    
+    <main id="page-r">
+        <div id="apresentation">
+            <div class="layout-img">
+                <img src="{{items[index].image}}" alt=""/>
+            </div>
+            <div class="tittle-r">
+                {{items[index].title}}
+            </div>
+            <div class="chef">
+                {{items[index].author}}
+            </div>
+        </div>
+        <div class="ingredientes details" >
+            <div class="ingre-tittle">
+                <h1>Ingredientes</h1> 
+                <a>ESCONDER</a>
+            </div>
+            <div class="content hiden">
+                <ul>
+                 {% for ingredient in items[index].ingredients %}
+                 <li>{{ingredient}}</li> 
+                 {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="preparo details">
+            <div class="ingre-tittle">
+                <h1>Modo de Preparo</h1>
+                <a>ESCONDER</a>
+            </div>
+            <div class="content hiden">
+                {% for preparation in items[index].preparation %}    
+                <p>{{preparation}}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="info details">
+            <div class="ingre-tittle">
+                <h1>Informações Adicionais</h1>
+                <a>ESCONDER</a>
+            </div>
+            <div class="content hiden">
+                <p>{{items[index].information}} </p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

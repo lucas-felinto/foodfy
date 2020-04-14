@@ -1,23 +1,24 @@
-const modalOverlay = document.querySelector('.modal-overlay')
 const receipes = document.querySelectorAll('.receipe')
+const details = document.querySelectorAll('.details')
 
-for (let receipe of receipes) {
+for (const [index, receipe] of receipes.entries()) {
+
     receipe.addEventListener("click", function(){
-        const imgId = receipe.getAttribute("id");
-        const tittle = receipe.querySelector(".plate p").textContent;
-        const content = receipe.querySelector(".name p").textContent;
-
-        modalOverlay.classList.add('actived');
-
-        event.preventDefault();
-
-        modalOverlay.querySelector("img").src = imgId;
-        modalOverlay.querySelector(".tittle-modal").textContent = tittle;
-        modalOverlay.querySelector(".chef-modal").textContent = content;
+        event.preventDefault()
+        window.location.href = `/recipes/${index}`
     })
 }
 
-document.querySelector('.close-modal').addEventListener("click", function() {
-    modalOverlay.classList.remove('actived')
-    event.preventDefault()
-}) 
+for (const detail of details) {
+    const a = detail.querySelector('.details a')
+
+    a.addEventListener('click', function () {
+        if (detail.querySelector('.content').classList.contains('hidden')) {
+            a.innerText = 'ESCONDER'
+            detail.querySelector('.content').classList.remove('hidden')
+        } else {
+            a.innerText = 'MOSTRAR'
+            detail.querySelector('.content').classList.add('hidden')
+        }
+    })
+}
