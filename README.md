@@ -24,12 +24,12 @@
 O projeto foodfy está sendo realizado durante o Bootcamp Launchbase pela Rocketseat, organizado em diferentes etapas de contrução.
 
 ## Tecnologias
-* <b>Front End:</b>
+* <b><h3>Front End:</h3></b>
 - [x] HTML
 - [x] CSS
 - [x] JavaScript
 
-* <b>Back End:</b>
+* <b><h3>Back End:</h3></b>
 - [x] Node.js
 - [x] NPM
 - [x] Nodemon
@@ -37,13 +37,13 @@ O projeto foodfy está sendo realizado durante o Bootcamp Launchbase pela Rocket
 - [x] Nunjucks
 
 ## Etapas
-* <b>Parte I - Front End</b>
+* <b><h3>Parte I - Front End</h3></b>
 
 <p> Nessa etapa foi desenvolvido todo o layout visual com HTML, CSS e JavaScript, com páginas index, sobre e receitas, com uso de modal/pop ups para visualização das receitas </p>
 
 <img src="https://user-images.githubusercontent.com/62717182/79283691-f7702880-7e8e-11ea-8558-8aa118da887a.gif" width="1300"/> <img src="https://user-images.githubusercontent.com/62717182/79284054-ff7c9800-7e8f-11ea-8f78-9ca3f6035a06.gif" width="1300"/>
 
-* <b>Parte II - Back End</b>
+* <b><h3>Parte II - Back End</h3></b>
 
 <p> Etapa de construção do Back End com Node.js, utilizando gerenciador de pacotes NPM, criando servidor local com Express e Nodemon, Template Enginers com Nunjucks, fazendo transferência de dados do Back para o Front. </p>
 <img src="https://user-images.githubusercontent.com/62717182/79284845-3bb0f800-7e92-11ea-9ce5-90b4eb1ba4a7.png" width="1300"/>
