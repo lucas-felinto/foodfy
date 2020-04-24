@@ -5,7 +5,7 @@ for (const [index, receipe] of receipes.entries()) {
 
     receipe.addEventListener("click", function(){
         event.preventDefault()
-        window.location.href = `/recipes/${index}`
+        window.location.href = `/recipe/${index}`
     })
 }
 
