@@ -22,3 +22,34 @@ for (const detail of details) {
         }
     })
 }
+
+//ADD INGREDIENTE / PREPARO
+
+function addIngrediente(){
+    const ingredientes = document.querySelector(".ingredients")
+    const fieldContainer = document.querySelectorAll(".ing")
+
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    if (newField.children[0].value == "") return false;
+
+    newField.children[0].value = "";
+    ingredientes.appendChild(newField);
+    }
+
+    document.querySelector(".p2").addEventListener("click", addIngrediente)
+
+
+function addPreparo(){
+    const ingredientes = document.querySelector(".passo-preparo")
+    const fieldContainer = document.querySelectorAll(".prep")
+
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+    if (newField.children[0].value == "") return false;
+
+    newField.children[0].value = "";
+    ingredientes.appendChild(newField);
+    }
+
+    document.querySelector(".p3").addEventListener("click", addPreparo)

@@ -14,5 +14,6 @@ routes.get("/recipe/:index", site.recipe)
 //admin - recipes
 routes.get("/index", recipes.index)
 routes.get("/create", recipes.create)
+routes.post("/recipes", recipes.post)
 
 module.exports = routes

@@ -4,26 +4,32 @@
 
 <div class="create-layout">
     <form class="form" action="/recipes" method="post">
-    <a class="button-save">Salvar</a>
+    <button type="submit" class="button-save">Salvar</button>
         <p class="p1">Criando receita</p>
         <div class="img-url">
             <p>Imagem da receita</p>
             <input type="url" name="img_url">
         </div>
-        <div class="ingrediente">
+        <div class="ingredients">
             <p>Ingredientes</p>
-            <input type="text" name="ingrediente">
-            <p class="p2">Adicionar novo ingrediente</p>
+            <div class="ing">
+                <input type="text" name="ingredientes[]">
+            </div>
         </div>
+        <a class="p2">Adicionar novo ingrediente</a>
         <div class="passo-preparo">
             <p>Modo de Preparo</p>
-            <input type="text" name="passo">
-            <p class="p2">Adicionar novo passo</p>
+            <div class="prep">
+                <input type="text" name="passo[]">
+            </div>
         </div>
+        <a class="p3">Adicionar novo passo</a>
         <div class="info-add">
             <p>Informações Adicionais</p>
             <textarea name="informations"></textarea>
         </div>
     </form>
+
+<script src="/scripts.js"></script>
 </div>
 {% endblock content %}
