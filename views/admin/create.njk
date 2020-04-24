@@ -2,4 +2,28 @@
 
 {% block content %}
 
+<div class="create-layout">
+    <form class="form" action="/recipes" method="post">
+    <a class="button-save">Salvar</a>
+        <p class="p1">Criando receita</p>
+        <div class="img-url">
+            <p>Imagem da receita</p>
+            <input type="url" name="img_url">
+        </div>
+        <div class="ingrediente">
+            <p>Ingredientes</p>
+            <input type="text" name="ingrediente">
+            <p class="p2">Adicionar novo ingrediente</p>
+        </div>
+        <div class="passo-preparo">
+            <p>Modo de Preparo</p>
+            <input type="text" name="passo">
+            <p class="p2">Adicionar novo passo</p>
+        </div>
+        <div class="info-add">
+            <p>Informações Adicionais</p>
+            <textarea name="informations"></textarea>
+        </div>
+    </form>
+</div>
 {% endblock content %}

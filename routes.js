@@ -5,7 +5,7 @@ const routes = express.Router()
 
 //site
 routes.get("/", function (req, res) {
-    return res.render("site/index")
+    return res.render("site/home")
 })
 routes.get("/about", site.about)
 routes.get("/recipes", site.recipes)

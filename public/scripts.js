@@ -1,9 +1,9 @@
-const receipes = document.querySelectorAll('.receipe')
+const recipes = document.querySelectorAll('.index-recipe')
 const details = document.querySelectorAll('.details')
 
-for (const [index, receipe] of receipes.entries()) {
+for (const [index, recipe] of recipes.entries()) {
 
-    receipe.addEventListener("click", function(){
+    recipe.addEventListener("click", function(){
         event.preventDefault()
         window.location.href = `/recipe/${index}`
     })
