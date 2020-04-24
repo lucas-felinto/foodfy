@@ -1,5 +1,5 @@
 <p align="center">
-     <img alt="logo foodfy" src="https://github.com/lucas-felinto/foodfy/blob/master/public/_imgs/logo.png?raw=true" width="150" />
+     <img alt="logo foodfy" src="https://github.com/lucas-felinto/foodfy/blob/master/public/_imgs/logo_b.png?raw=true" width="150" />
      <img alt="chef foodfy" src="https://github.com/lucas-felinto/foodfy/blob/master/public/_imgs/chef.png?raw=true" width="100" heigth="150" />
   </p>
 <p align="center">
