@@ -1,5 +1,5 @@
 <p align="center">
-     <img alt="logo foodfy" src="https://github.com/lucas-felinto/foodfy/blob/master/public/_imgs/logo.png?raw=true" width="150" />
+     <img alt="logo foodfy" src="https://github.com/lucas-felinto/foodfy/blob/master/public/_imgs/logo_b.png?raw=true" width="150" />
      <img alt="chef foodfy" src="https://github.com/lucas-felinto/foodfy/blob/master/public/_imgs/chef.png?raw=true" width="100" heigth="150" />
   </p>
 <p align="center">
@@ -8,7 +8,7 @@
   </a>
   
   <a href="https://www.linkedin.com/in/lucas-felinto/" >
-    <img alt="My Linkedin" src="https://img.shields.io/badge/LinkedIn-%230077B5?style=social&logo=linkedin">
+    <img alt="My Linkedin" src="https://img.shields.io/badge/lucasfelinto-%230077B5?style=social&logo=linkedin">
   </a>
 </p>
 
