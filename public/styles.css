@@ -303,14 +303,14 @@ div.ingre-tittle a {
 
 #menu-admin {
     background-color: #111111;
-    height: 71px;
+    height: 65px;
 }
 
 #menu-admin img {
-    left: 13%;
+    left: 14%;
     margin: 5px;
     position: relative;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* INDEX */
@@ -332,17 +332,16 @@ div.ingre-tittle a {
 
 .button-add:hover {
     transform: scale(0.97);
-    opacity: 0.9;
 }
 
 .button-add a {
     font-family: 'Roboto-Bold', sans-serif;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     color: #FFFFFF;
     background: #6558C3;
     border-radius: 4px;
-    padding: 8px;
+    padding: 7px;
 }
 
 .index-recipes {
@@ -351,7 +350,7 @@ div.ingre-tittle a {
     width: 900px;
     gap: 20px;
 
-    margin: 7% 210px;
+    margin: 6.5% 210px;
 }
 
 .recipe-image {
@@ -424,6 +423,7 @@ input {
     border-radius: 4px;
     margin-top: 10px;
     font-size: 18px;
+    font-family: 'Roboto-regular', sans-serif;
 }
 
 .button-save {
@@ -433,13 +433,43 @@ input {
     color: #FFFFFF;
     background: #6558C3;
     border-radius: 4px;
-    padding: 8px;
+    padding: 8px 10px;
     position: absolute;
     right: 15%;
+    top: 5%;
     cursor: pointer;
+    position: absolute;
 }
 
 .button-save:hover {
     transform: scale(0.97);
-    opacity: 0.9;
+}
+
+.button-edit {
+    position: absolute;
+    margin-top: 30%;
+    right: 17%;
+}
+
+.button-add:hover {
+    transform: scale(0.97);
+}
+
+.button-delete {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: #DC4747;
+    border-radius: 4px;
+    padding: 8px 10px;
+    position: absolute;
+    right: 21%;
+    top: 5%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.button-delete:hover {
+    transform: scale(0.97);
 }

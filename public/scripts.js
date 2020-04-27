@@ -1,13 +1,5 @@
-const recipes = document.querySelectorAll('.index-recipe')
+// MOSTRAR / ESCONDER
 const details = document.querySelectorAll('.details')
-
-for (const [index, recipe] of recipes.entries()) {
-
-    recipe.addEventListener("click", function(){
-        event.preventDefault()
-        window.location.href = `/recipe/${index}`
-    })
-}
 
 for (const detail of details) {
     const a = detail.querySelector('.details a')
@@ -24,7 +16,6 @@ for (const detail of details) {
 }
 
 //ADD INGREDIENTE / PREPARO
-
 function addIngrediente(){
     const ingredientes = document.querySelector(".ingredients")
     const fieldContainer = document.querySelectorAll(".ing")
@@ -39,7 +30,6 @@ function addIngrediente(){
 
     document.querySelector(".p2").addEventListener("click", addIngrediente)
 
-
 function addPreparo(){
     const ingredientes = document.querySelector(".passo-preparo")
     const fieldContainer = document.querySelectorAll(".prep")
@@ -53,3 +43,12 @@ function addPreparo(){
     }
 
     document.querySelector(".p3").addEventListener("click", addPreparo)
+
+//DELETAR RECEITA
+const formDelete = document.querySelector("#form-delete")
+formDelete.addEventListener("submit", function(event){
+    const confirmation = confirm("Delete?")
+        if (!confirmation) {
+            event.preventDefault()
+        }
+})

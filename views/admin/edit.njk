@@ -1,0 +1,19 @@
+{% extends "layout_admin.njk" %}
+
+{% block content %}
+
+<div class="create-layout">
+
+    <form id="form-delete" action="/admin/recipes/{{index}}?_method=DELETE" method="POST">
+    <button type="submit" class="button-delete">Deletar</button>
+    </form>
+
+    <form class="form" action="/admin/recipes/{{index}}?_method=PUT" method="POST">
+    <p class="p1">Editando receita</p>
+    {% include 'admin/fields.njk' %}
+    
+    </form>
+
+<script src="/scripts.js"></script>
+</div>
+{% endblock content %}

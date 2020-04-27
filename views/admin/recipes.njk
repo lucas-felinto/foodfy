@@ -1,10 +1,13 @@
-{% extends "layout.njk" %}
+{% extends "layout_admin.njk" %}
 
 {% block content %}
 
     <div class="index-title">
-        <h4> Receitas </h4>
+        <h4> Gerenciar receitas </h4>
     </div>
+
+    <div class="button-add"><a href="/admin/recipes/create"> Adicionar Receita </a></div>
+
     <div class="index-recipes">
 
         {% for recipe in recipes %}
@@ -22,6 +25,8 @@
 
         {% endfor %}
 
+    </div>
+
 <script>
 
 const recipes = document.querySelectorAll('.index-recipe')
@@ -31,13 +36,10 @@ for (const [index, recipe] of recipes.entries()) {
 
     recipe.addEventListener("click", function(){
         event.preventDefault()
-        window.location.href = `/site/recipe/${index}`
+        window.location.href = `/admin/recipe/${index}`
     })
 }
 
 </script>
 
-    </div>  
-    
-    </div>
-{% endblock %}
+{% endblock content %}

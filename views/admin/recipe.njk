@@ -1,9 +1,12 @@
-{% extends "layout.njk" %}
+{% extends "layout_admin.njk" %}
 
 {% block content %}
-    
+
     <main id="page-r">
         <div id="apresentation">
+
+        <div class="button-add button-edit"><a href="/admin/recipes/{{ index }}/edit"> Editar </a></div>
+
             <div class="layout-img">
                 <img src="{{items[index].img_url}}" alt=""/>
             </div>
