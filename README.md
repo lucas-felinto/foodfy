@@ -31,9 +31,12 @@ O projeto foodfy está sendo realizado durante o Bootcamp Launchbase pela Rocket
 
 * <b><h3>Back End:</h3></b>
 - [x] Desenvolvido em Node.js
-Dependências: 
+
+* <h4><b>Dependências:</b></h4>
+
 - [x] Servidor em Express
-Dependências de desenvolvimento:
+
+* <h4><b>Dependências de desenvolvimento:</b></h4>
 - [x] NPM
 - [x] Nodemon
 - [x] Nunjucks
@@ -48,12 +51,12 @@ Dependências de desenvolvimento:
 
 * <b><h3>II - Back End</h3></b>
 
-<p> Etapa de construção do Back End em Node.js, utilizando gerenciador de pacotes NPM, criando servidor local com Express e Nodemon, Template Enginers com Nunjucks, trabalhando com dados armazenados em JSON. </p>
+<p> Etapa de construção do Back End em Node.js, utilizando gerenciador de pacotes NPM, criando servidor local com Express e Nodemon, Template Enginers com Nunjucks, fazendo trasferência de dados do back para o front end. </p>
 <img src="https://user-images.githubusercontent.com/62717182/79284845-3bb0f800-7e92-11ea-9ce5-90b4eb1ba4a7.png" width="1300"/>
 <img src="https://user-images.githubusercontent.com/62717182/79284744-f4c30280-7e91-11ea-9c8b-5fcceb0a5511.gif" width="1300"/>
 
 * <b><h3>Parte III - Área de Administração</h3></b>
-<p> Nessa etapa foi implementada uma área de administração para incluir, editar e deletar receitas que serão apresentadas. </p>
+<p> Nessa etapa foi implementada uma área de administração para incluir, editar e deletar receitas que serão apresentadas, trabalhando com dados armazenados em JSON. </p>
 <img src="(https://user-images.githubusercontent.com/62717182/80850913-ed6f5900-8bf4-11ea-80e7-89676cd8889e.gif" width="1300"/>
 
 ## Instalação e Execução
