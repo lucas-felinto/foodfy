@@ -13,7 +13,7 @@
 </p>
 
 <h3 align="center">
- <a href="#sobre">Sobre</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#etapas">Etapas</a> |<a href="#instalação">Instalação e Execução</a> | <a href="#license">Licença</a> 
+ <a href="#sobre">Sobre</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#etapas">Etapas</a> | <a href="#instalação">Instalação e Execução</a> | <a href="#license">Licença</a> 
 </h3>
 
 <h2 align="center">
