@@ -1,5 +1,5 @@
 const fs = require('fs')
-const data = require('../data.json')
+const data = require('../../../data.json')
 
 exports.index = function (req, res){
     const index = req.params.index
@@ -65,12 +65,6 @@ exports.delete = function (req, res){
     }
 
     removeRecipe()
-    
-    // const filteredRecipes = data.recipes.filter(function(recipe){
-    //     return recipe[index] != [index] 
-    // })
-
-    // data.recipes[index] = filteredRecipes
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send("Write Files Error")

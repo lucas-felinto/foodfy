@@ -2,7 +2,7 @@
   "name": "foodfy",
   "version": "1.0.0",
   "description": "Site de receitas para a empresa Foodfy",
-  "main": "scripts.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "method-override": "^3.0.0",
@@ -16,8 +16,8 @@
   },
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon server.js",
-    "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, views'"
+    "nodemon": "nodemon src/server.js",
+    "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, src/app/views'"
   },
   "repository": {
     "type": "git",

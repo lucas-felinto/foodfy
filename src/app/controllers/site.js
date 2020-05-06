@@ -1,4 +1,4 @@
-const data = require('../data.json')
+const data = require('../../../data.json')
 
 exports.about = function (req, res) {
     return res.render("site/about")
