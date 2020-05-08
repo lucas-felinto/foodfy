@@ -1,11 +1,11 @@
 <button type="submit" class="button-save">Salvar</button>
         <div class="img-url">
             <p>Imagem da receita</p>
-            <input type="url" name="img_url" value="{{recipe[index].img_url}}">
+            <input type="url" name="image" value="{{recipe[index].img_url}}">
         </div>
         <div class="titulo_receita">
             <p>Título da Receita</p>
-            <input type="text" name="titulo_receita" value="{{recipe[index].titulo_receita}}">
+            <input type="text" name="title" value="{{recipe[index].titulo_receita}}">
         </div>
         <div class="chef_name">
             <p>Nome do Chef</p>
@@ -16,10 +16,10 @@
             <div class="ing">
                 {% if recipe %}
                     {% for ingrediente in recipe[index].ingredientes %}
-                        <input type="text" name="ingredientes[]" value="{{ingrediente}}">
+                        <input type="text" name="ingredients[]" value="{{ingrediente}}">
                     {% endfor %}
                 {% else %}
-                    <input type="text" name="ingredientes[]">
+                    <input type="text" name="ingredients[]">
                 {% endif %}
             </div>
         </div>
@@ -29,15 +29,15 @@
             <div class="prep">
                 {% if recipe %}
                     {% for passo in recipe[index].passo %}
-                        <input type="text" name="passo[]" value="{{ passo }}">
+                        <input type="text" name="preparation[]" value="{{ passo }}">
                     {% endfor %}
                 {% else %}
-                    <input type="text" name="passo[]">
+                    <input type="text" name="preparation[]">
                 {% endif %}
             </div>
         </div>
         <a class="p3">Adicionar novo passo</a>
         <div class="info-add">
             <p>Informações Adicionais</p>
-            <textarea name="informations">{{recipe[index].informations}}</textarea>
+            <textarea name="information">{{recipe[index].informations}}</textarea>
         </div>

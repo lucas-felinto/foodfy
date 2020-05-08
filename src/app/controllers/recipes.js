@@ -1,5 +1,6 @@
 const fs = require('fs')
 const data = require('../../../data.json')
+const recipe = require('../models/recipe')
 
 module.exports = {
     index (req, res) {
@@ -23,14 +24,11 @@ module.exports = {
         return res.render("admin/edit", {recipe: data.recipes, index})
     },
     post (req, res) {
-        data.recipes.push(req.body)
-
-        fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-            if (err) return res.send("Erro")
-            
+        recipe.create(req.body, function (recipe) {
             return res.redirect("/admin/recipes")
-        })
-    }, put (req, res) {
+        }) 
+    }, 
+    put (req, res) {
         const index = req.params.index
         const foundRecipe = data.recipes[index]
 
@@ -48,7 +46,8 @@ module.exports = {
 
             return res.redirect(`/admin/recipes`)
         })  
-    }, delete (req, res) {
+    }, 
+    delete (req, res) {
         const index = req.params.index
     
         function removeRecipe () {
