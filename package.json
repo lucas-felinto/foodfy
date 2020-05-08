@@ -19,6 +19,9 @@
     "nodemon": "nodemon src/server.js",
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, src/app/views'"
   },
+  "nodemonConfig": {
+    "ignore": ["data.json"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lucas-felinto/foodfy.git"
