@@ -28,6 +28,19 @@
         </p>
     </footer>
     <script src="/scripts.js"></script>
+
+    <script>
+        const currentPage = location.pathname
+        const menuItems = document.querySelectorAll("#menu a")
+    
+        for (item of menuItems) {
+            if (currentPage.includes(item.getAttribute("href"))) {
+                item.classList.add("active")
+            }
+        }
+        
+    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+{% extends "admin/layout_admin.njk" %}
+
+{% block content %}
+
+<div class="create-layout">
+    <form class="form" action="/admin/chefs" method="POST">
+        <p class="p1">Criando chef</p>
+        <button type="submit" class="button-save chef-button">Salvar Chef</button>
+        <div class="name_chef">
+            <p>Nome</p>
+            <input type="text" name="chef_name" value="">
+        </div>
+        <div class="img_chef">
+            <p>Avatar</p>
+            <input type="url" name="avatar_url" value="">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

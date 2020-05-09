@@ -313,6 +313,20 @@ div.ingre-tittle a {
     padding: 15px;
 }
 
+#menu-admin a {
+    text-decoration: none;
+    color: #777;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+    margin-top: 20px;
+}
+
+#menu-admin ul {
+    padding: 12px 0;
+}
+
 /* INDEX */
 
 .index-title {
@@ -376,7 +390,7 @@ div.ingre-tittle a {
 .create-layout {
     position: absolute;
     padding: 2% 15%;
-    width: 940px;
+    width: 900px;
 }
 
 .form p {
@@ -472,4 +486,16 @@ input {
 
 .button-delete:hover {
     transform: scale(0.97);
+}
+
+.chef-button {
+    margin-top: 30px;
+}
+
+#menu-admin a.active {
+    color: #FFFFFF;
+}
+
+#menu a.active {
+    font-weight: bold;
 }

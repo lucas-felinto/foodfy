@@ -5,10 +5,10 @@ const recipe = require('../models/recipe')
 module.exports = {
     index (req, res) {
         const index = req.params.index
-        return res.render("admin/recipes", {recipes: data.recipes, index})
+        return res.render("admin/recipes/recipes", {recipes: data.recipes, index})
     },
     create (req, res) {
-        return res.render("admin/create")
+        return res.render("admin/recipes/create")
     },
     show (req, res) {
         const index = req.params.index
@@ -16,15 +16,15 @@ module.exports = {
 
         if (!foundRecipe) return res.send('recipe not found')
 
-        return res.render("admin/recipe", {items: data.recipes, index})
+        return res.render("admin/recipes/recipe", {items: data.recipes, index})
     },
     edit (req, res) {
         const index = req.params.index
 
-        return res.render("admin/edit", {recipe: data.recipes, index})
+        return res.render("admin/recipes/edit", {recipe: data.recipes, index})
     },
     post (req, res) {
-        recipe.create(req.body, function (recipe) {
+        recipe.create(req.body, function() {
             return res.redirect("/admin/recipes")
         }) 
     }, 
