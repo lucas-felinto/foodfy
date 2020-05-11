@@ -9,7 +9,12 @@
         </div>
         <div class="chef_name">
             <p>Nome do Chef</p>
-            <input type="text" name="chef_name" value="{{recipe[index].chef_name}}">
+            <select name="chef_id">
+                    <option>Selecione um Chef</option>                    
+                {% for chef in chefOptions %}
+                    <option value="{{chef.id}}">{{chef.chef_name}}</option>                    
+                {% endfor %}
+            </select>
         </div>
         <div class="ingredients">
             <p>Ingredientes</p>

@@ -428,6 +428,39 @@ input {
     margin-bottom: 5px;
 }
 
+select {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 8px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Roboto-regular', sans-serif;
+    margin-bottom: 5px;
+    color: #777777;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 101%;
+
+    background-image: url('https://image.flaticon.com/icons/png/512/467/467264.png'),
+    linear-gradient(to bottom, #ffffff 0%,#ffffff 100%);
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+option:nth-child(1) {
+    color: #777777;
+}
+
+option {
+    color: #000000;
+    padding: 4px;
+}
+
 .info-add textarea {
     width: 100%;
     height: 90px;
