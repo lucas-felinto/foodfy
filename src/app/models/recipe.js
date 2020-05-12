@@ -40,5 +40,28 @@ module.exports = {
 
             callbcack(results.rows)
         })
+    },
+    recipeInformations (callback) {
+        database.query(`
+            SELECT recipes.*, chefs.chef_name AS chef_name
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            `
+            , function (err, results) {
+                if (err) throw `Database ERROR ${err}`
+
+                callback(results.rows)
+        })
+    },
+    find (id, callback) {
+        database.query(` 
+        SELECT recipes.*, chefs.chef_name AS chef_name
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        WHERE recipes.id = $1`, [id], function (err, results) {
+            if (err) throw `DATABASE ${err}`
+
+            callback(results.rows[0])
+        })
     }
 }

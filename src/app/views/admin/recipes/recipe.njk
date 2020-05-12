@@ -8,13 +8,13 @@
         <div class="button-add button-edit"><a href="/admin/recipes/{{ index }}/edit"> Editar </a></div>
 
             <div class="layout-img">
-                <img src="{{items[index].img_url}}" alt=""/>
+                <img src="{{recipe.image}}" alt=""/>
             </div>
             <div class="tittle-r">
-                {{items[index].titulo_receita}}
+                {{recipe.title}}
             </div>
-            <div class="chef">
-                {{items[index].chef_name}}
+            <div class="chef_name">
+                {{recipe.chef_name}}
             </div>
         </div>
         <div class="ingredientes details" >
@@ -24,8 +24,8 @@
             </div>
             <div class="content hiden">
                 <ul>
-                 {% for ingredient in items[index].ingredientes %}
-                 <li>{{ingredient}}</li> 
+                 {% for ingredient in recipe.ingredients %}
+                    <li>{{ingredient}}</li> 
                  {% endfor %}
                 </ul>
             </div>
@@ -36,8 +36,8 @@
                 <a>ESCONDER</a>
             </div>
             <div class="content hiden">
-                {% for preparation in items[index].passo %}    
-                <p>{{preparation}}</p>
+                {% for preparation in recipe.preparation %}    
+                    <p>{{preparation}}</p>
                 {% endfor %}
             </div>
         </div>
@@ -47,7 +47,7 @@
                 <a>ESCONDER</a>
             </div>
             <div class="content hiden">
-                <p> {{items[index].informations}} </p>
+                <p> {{recipe.information}} </p>
             </div>
         </div>
     </main>

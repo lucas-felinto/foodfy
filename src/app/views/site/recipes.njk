@@ -11,31 +11,16 @@
         
         <div class="index-recipe">
             <div class="recipe-image">
-                <div class="images"><img src="{{recipe.img_url}}" alt=""></div>
+                <div class="images"><img src="{{recipe.image}}" alt=""></div>
             </div>
             <div class="recipe-text">
-                <div class="plate">{{recipe.titulo_receita}}</div>
+                <div class="plate">{{recipe.title}}</div>
                 <div class="name">{{recipe.chef_name}}</div>
-                <div class="visualizar"><a href="">Visualizar</a></div>
+                <div class="visualizar"><a href="/site/recipes/{{recipe.id}}">Visualizar</a></div>
             </div>
         </div>
 
         {% endfor %}
-
-<script>
-
-const recipes = document.querySelectorAll('.index-recipe')
-const details = document.querySelectorAll('.details')
-
-for (const [index, recipe] of recipes.entries()) {
-
-    recipe.addEventListener("click", function(){
-        event.preventDefault()
-        window.location.href = `/site/recipe/${index}`
-    })
-}
-
-</script>
 
     </div>  
     

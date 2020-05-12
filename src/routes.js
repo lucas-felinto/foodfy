@@ -10,7 +10,7 @@ routes.get("/", function (req, res) {
 })
 routes.get("/site/about", site.about)
 routes.get("/site/recipes", site.recipes)
-routes.get("/site/recipe/:index", site.recipe)
+routes.get("/site/recipes/:id", site.recipe)
 
 //admin 
 
@@ -21,7 +21,7 @@ routes.get("/admin", function (req, res) {
 })
 routes.get("/admin/recipes", recipes.index)
 routes.get("/admin/recipes/create", recipes.create)
-routes.get("/admin/recipe/:index", recipes.show)
+routes.get("/admin/recipes/:id", recipes.show)
 routes.get("/admin/recipes/:index/edit", recipes.edit)
 
 routes.post("/admin/recipes", recipes.post)
@@ -32,6 +32,7 @@ routes.delete("/admin/recipes/:index", recipes.delete)
 
 routes.get("/admin/chefs", chefs.index)
 routes.get("/admin/chefs/create", chefs.create)
+routes.get("/admin/chefs/:id", chefs.show)
 routes.post("/admin/chefs", chefs.post)
 
 module.exports = routes

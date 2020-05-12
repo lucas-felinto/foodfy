@@ -1,14 +1,23 @@
 const data = require('../../../data.json')
+const Recipe = require('../models/recipe')
 
 module.exports = {
     about (req, res) {
         return res.render("site/about")
     },
     recipes (req, res) {
-        return res.render("site/recipes", { recipes: data.recipes })
+        Recipe.recipeInformations(function (recipes) {
+            return res.render("site/recipes", { recipes: recipes })
+
+        })
     },
     recipe (req, res) {
-        const index = req.params.index
-        return res.render("site/recipe", {items: data.recipes, index})
+
+        Recipe.find(req.params.id, function (recipe) {
+            if (!recipe) return res.send("Recipe not found!")
+
+            return res.render("site/recipe", {recipe} )
+        })
+
     }
 }
