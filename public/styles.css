@@ -37,7 +37,7 @@ div#menu img {
 nav ul {
     list-style: none;
     position: absolute;
-    right: 60%;
+    right: 55%;
     top: 13px;
 
     color: #111111;
@@ -654,6 +654,50 @@ option {
     margin-right: 40px;
 }
 
-.hiden {
+.alert-hiden {
     visibility: hidden;
+}
+
+/* ÁREA BUSCAR */
+
+input.buscar {
+    position: absolute;
+    width: 200px;
+
+    padding: 8px;
+    font-size: 16px;
+
+    margin: 0;
+    top: 5%;
+    right: 21.4%;
+}
+
+/* NOT FOUND */
+
+div.container {
+    width: 940px;
+    height: 366px;
+    background-color: #FBDFDB;
+    border-radius: 30px;
+    margin: 30px auto;
+} 
+
+.notfound {
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 40px;
+
+    margin-top: 70px;
+    margin-left: 280px;
+
+    position: absolute;
+}
+
+.error img {
+    height: 330px;
+    position: absolute;
+
+    margin-left: 25px;
+    top: 6%;
 }

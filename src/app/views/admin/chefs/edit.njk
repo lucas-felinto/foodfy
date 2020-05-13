@@ -24,7 +24,7 @@
             <p>Avatar</p>
             <input type="url" name="avatar_url" value="{{chef.avatar_url}}">
         </div>
-        <p style="color: red; font-weight: normal" class="hiden">
+        <p style="color: red; font-weight: normal" class="alert-hiden">
             Você não pode excluir um chef que possui receita!
         </p>
 
@@ -36,10 +36,10 @@
 
 if ( {{chef.total_recipes}} >= 1) {
 
-    const showAlert = document.querySelector('.hiden')
+    const showAlert = document.querySelector('.alert-hiden')
     const buttonDelete = document.querySelector('.button-delete')
     buttonDelete.addEventListener("click", function(event){
-        showAlert.classList.remove('hiden')
+        showAlert.classList.remove('alert-hiden')
         event.preventDefault()
     })
 

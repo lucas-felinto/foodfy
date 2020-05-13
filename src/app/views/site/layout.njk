@@ -14,8 +14,17 @@
         <nav>
             <ul>
                 <li><a href="/site/about">Sobre</a></li>
-                <li><a href="/site/recipes">Receitas</a></li>
+                <li><a class="aRecipe" href="/site/recipes">Receitas</a></li>
+                <li><a href="/site/chefs">Chefs</a></li>
             </ul>
+
+            <form class="buscar-receita" action="/site/search" method="get">
+            
+                <input class="buscar" type="text" name="filter" value="{{filter}}" placeholder="Buscar uma receita">
+                <button type="submit" class="button-save">Buscar</button> 
+
+            </form>
+
         </nav>
     </div>
 </header>
@@ -37,6 +46,12 @@
             if (currentPage.includes(item.getAttribute("href"))) {
                 item.classList.add("active")
             }
+        }
+
+        const formBuscar = document.querySelector(".buscar-receita")
+
+        if (currentPage.includes("chefs")) {
+            formBuscar.classList.add("alert-hiden")
         }
         
     </script>

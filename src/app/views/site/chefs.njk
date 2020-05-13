@@ -1,0 +1,33 @@
+{% extends "site/layout.njk" %}
+
+{% block content %}
+
+    <div class="index-title">
+        <h4>Chefs</h4>
+    </div>
+
+    <div class="chefs-container">
+        
+        <div class="chef">
+            {% for chef in chefs %}
+                <div class="card-chef">
+                    <div class="chef_avatar">
+                        <img src="{{ chef.avatar_url }}">
+                    </div>
+                    <div class="chef_details">
+                        <div class="chef_name">
+                            <p>
+                                {{chef.chef_name}}
+                            </p>
+                        </div>
+                        <div class="visualizar">
+                            <a href="/site/chefs/{{chef.id}}">Visualizar</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>    
+        
+    </div>
+
+{% endblock %}

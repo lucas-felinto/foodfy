@@ -17,7 +17,7 @@ module.exports = {
     show (req, res) {
 
         Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) return res.send("Recipe not found!")
+            if (!recipe) return res.redirect("/not-found")
 
             return res.render("admin/recipes/recipe", {recipe} )
         })
@@ -26,7 +26,7 @@ module.exports = {
     edit (req, res) {
 
         Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) return res.send("Recipe not found!")
+            if (!recipe) res.redirect("/not-found")
 
             Recipe.chefSelectOptions(function(options) {
 

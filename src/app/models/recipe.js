@@ -64,6 +64,20 @@ module.exports = {
             callback(results.rows[0])
         })
     },
+    findBy (filter, callback) {
+
+        database.query(`
+            SELECT recipes.*, chefs.chef_name AS chef_name
+            FROM recipes
+            LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+            WHERE recipes.title ILIKE '%${filter}%'`, function (err, results) {
+                if (err) throw `DATABASE ${err}`
+
+                callback(results.rows)
+
+            })
+
+    },
     update (data, callback) {
         
         const query = `

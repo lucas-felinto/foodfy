@@ -1,8 +1,8 @@
-// MOSTRAR / ESCONDER
-const details = document.querySelectorAll('.details')
+ // MOSTRAR / ESCONDER
+ const details = document.querySelectorAll('.details')
 
-for (const detail of details) {
-    const a = detail.querySelector('.details a')
+ for (const detail of details) {
+     const a = detail.querySelector('.details a')
 
     a.addEventListener('click', function () {
         if (detail.querySelector('.content').classList.contains('hidden')) {

@@ -24,7 +24,7 @@ module.exports = {
     show (req, res) {
         
         Chef.find(req.params.id, function (chef) {
-            if (!chef) return res.send("Chef Not Found!")
+            if (!chef) return res.redirect("/not-found")
 
             Recipe.recipeInformations(function (recipes) {
 
@@ -36,7 +36,7 @@ module.exports = {
     edit (req, res) {
 
         Chef.find(req.params.id, function (chef) {
-            if (!chef) return res.send("Chef Not Found!")
+            if (!chef) return res.redirect("/not-found")
 
             Recipe.recipeInformations(function (recipes) {
 
