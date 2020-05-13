@@ -13,7 +13,7 @@
 </p>
 
 <h3 align="center">
- <a href="#sobre">Sobre</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#etapas">Etapas</a> | <a href="#instalação">Instalação e Execução</a> | <a href="#license">Licença</a> 
+ <a href="#sobre">Sobre</a> | <a href="#etapas">Etapas</a> | <a href="#instalação">Instalação e Execução</a> | <a href="#license">Licença</a> 
 </h3>
 
 <h2 align="center">
@@ -21,44 +21,21 @@
 </h2>
 
 ## Sobre
-O projeto foodfy está sendo realizado durante o Bootcamp Launchbase pela Rocketseat, organizado em diferentes etapas de contrução.
+O projeto foodfy está sendo realizado durante o Bootcamp Launchbase pela Rocketseat, organizado em diferentes etapas de construção.
 
-## Tecnologias
-* <b><h3>Front End:</h3></b>
-- [x] HTML
-- [x] CSS
-- [x] JavaScript
-
-* <b><h3>Back End:</h3></b>
-- [x] Desenvolvido em Node.js
-
-* <h4><b>Dependências:</b></h4>
-
-- [x] Servidor em Express
-
-* <h4><b>Dependências de desenvolvimento:</b></h4>
-- [x] NPM
-- [x] Nodemon
-- [x] Nunjucks
-- [x] BrowserSync
-
-## Etapas
-* <b><h3>I - Front End</h3></b>
-
-<p> Nessa etapa foi desenvolvido todo o layout visual com HTML, CSS e JavaScript, com páginas index, sobre e receitas, com uso de modal/pop ups para visualização das receitas </p>
-
-<img src="https://user-images.githubusercontent.com/62717182/79283691-f7702880-7e8e-11ea-8558-8aa118da887a.gif" width="1300"/> <img src="https://user-images.githubusercontent.com/62717182/79284054-ff7c9800-7e8f-11ea-8f78-9ca3f6035a06.gif" width="1300"/>
-
-* <b><h3>II - Back End</h3></b>
-
-<p> Etapa de construção do Back End em Node.js, utilizando gerenciador de pacotes NPM, criando servidor local com Express e Nodemon, Template Enginers com Nunjucks, fazendo trasferência de dados do back para o front end. </p>
-<img src="https://user-images.githubusercontent.com/62717182/79284845-3bb0f800-7e92-11ea-9ce5-90b4eb1ba4a7.png" width="1300"/>
-<img src="https://user-images.githubusercontent.com/62717182/79284744-f4c30280-7e91-11ea-9c8b-5fcceb0a5511.gif" width="1300"/>
-
-* <b><h3>III - Área de Administração</h3></b>
-<p> Nessa etapa foi implementada uma área de administração para incluir, editar e deletar receitas que serão apresentadas, trabalhando com dados armazenados em JSON. </p>
-<img src="https://user-images.githubusercontent.com/62717182/80850913-ed6f5900-8bf4-11ea-80e7-89676cd8889e.gif" width="1300"/>
-
+## Etapas 
+* <a href="https://github.com/Rocketseat/bootcamp-launchbase-desafios-02/blob/master/desafios/02-foodfy.md">Construindo o Foodfy</a>
+- Construção do layout inicial da aplicação
+* <a href="https://github.com/Rocketseat/bootcamp-launchbase-desafios-03">Refatorando Foodfy</a>
+- Criando o servidor
+- Utilização do Nunjucks e dados dinâmicos
+* <a href="https://github.com/Rocketseat/bootcamp-launchbase-desafios-04/blob/master/desafios/04-admin-foodfy.md">Admin Foodfy</a>
+- Implementação administração do site
+- Gerenciamento de receitas na área de administração
+* <a href="https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/blob/master/desafios/05-persistindo-dados-foodfy.md">Persistindo Dados Da Aplicação</a>
+- Implementação do banco de dados PostgreSQL
+- Implementação de chefs
+     
 ## Instalação e Execução
 
 <b>Clonando o repositório:</b>
