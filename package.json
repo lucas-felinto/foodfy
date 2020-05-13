@@ -4,6 +4,7 @@
   "description": "Site de receitas para a empresa Foodfy",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
     "nunjucks": "^3.2.1",
@@ -20,7 +21,9 @@
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public, src/app/views'"
   },
   "nodemonConfig": {
-    "ignore": ["data.json"]
+    "ignore": [
+      "data.json"
+    ]
   },
   "repository": {
     "type": "git",

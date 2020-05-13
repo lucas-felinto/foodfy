@@ -4,12 +4,16 @@
 
 <div class="create-layout">
 
-    <form id="form-delete" action="/admin/recipes/{{index}}?_method=DELETE" method="POST">
-    <button type="submit" class="button-delete">Deletar</button>
+    <form id="form-delete" action="/admin/recipes/?_method=DELETE" method="POST">
+        <button type="submit" class="button-delete">Deletar</button>
+        <input type="hidden" name="id" value="{{ recipe.id }}">
     </form>
 
-    <form class="form" action="/admin/recipes/{{index}}?_method=PUT" method="POST">
+    <form class="form" action="/admin/recipes/?_method=PUT" method="POST">
     <p class="p1">Editando receita</p>
+    
+    <input type="hidden" name="id" value="{{ recipe.id }}">
+
     {% include 'admin/recipes/fields.njk' %}
     
     </form>

@@ -6,22 +6,52 @@
         <h4> Chef: {{chef.chef_name}} </h4>
     </div>
 
-    <div class="button-add"><a href="/admin/chefs/create"> Editar Chef </a></div>
+    <div class="button-add"><a href="/admin/chefs/{{ chef.id }}/edit"> Editar Chef </a></div>
 
-    <div class="chefDetails">
-        <div class="detail">
-            <img src="{{chef.avatar_url}}">
+        <div class="chefDetails">
+            <div class="detail">
+                <img src="{{chef.avatar_url}}">
+            </div>
+            <div class="name_detail">
+                <p>{{chef.chef_name}}</p>
+            </div>
+            <div class="num_detail">
+                <p> {{chef.total_recipes}} Receita(s)</p>
+            </div>
         </div>
-        <div class="name_detail">
-            <p>{{chef.chef_name}}</p>
-        </div>
-        <div class="num_detail">
-            <p> {{chef.total_recipes}} Receitas</p>
-        </div>
+
     </div>
 
-    <div class="chef-receitas">
+    <div class="container-chef-receipes">
 
+        <h2>Receitas</h2>
+    
+        <div class="grid">
+    
+            {% for recipe in recipes %}
+            
+                {% if recipe.chef_id == chef.id  %}
+    
+                <div class="chef-receipes">
+    
+                    <div class="recipe-image">
+                        <img src="{{recipe.image}}">
+                    </div>
+                    <div class="recipe-text">
+                        <div class="plate"> {{ recipe.title }} </div>
+                    <div class="name"> {{ recipe.chef_name }} </div>
+                        <div class="visualizar">
+                            <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                {% endif %}
+            
+            {% endfor %}
+        </div>
+         
     </div>
 
 {% endblock %}

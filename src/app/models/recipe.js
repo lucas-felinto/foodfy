@@ -38,7 +38,7 @@ module.exports = {
         `, function (err, results) {
             if (err) throw `DATABASE ${err}`
 
-            callbcack(results.rows)
+            return callbcack(results.rows)
         })
     },
     recipeInformations (callback) {
@@ -57,11 +57,47 @@ module.exports = {
         database.query(` 
         SELECT recipes.*, chefs.chef_name AS chef_name
         FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
         WHERE recipes.id = $1`, [id], function (err, results) {
             if (err) throw `DATABASE ${err}`
 
             callback(results.rows[0])
+        })
+    },
+    update (data, callback) {
+        
+        const query = `
+            UPDATE recipes SET
+                image = ($1),
+                chef_id = ($2),
+                title = ($3),
+                ingredients = ($4),
+                preparation = ($5),
+                information = ($6)
+            WHERE id = $7
+            `
+
+        const values = [
+            data.image,
+            data.chef_id,
+            data.title,
+            data.ingredients,
+            data.preparation,
+            data.information,
+            data.id
+        ]
+
+        database.query(query, values, function (err, results) {
+            if (err) throw `DATABASE ${err}`
+
+            callback()
+        })
+    },
+    delete (id, callback) {
+        database.query(`DELETE FROM recipes WHERE id = $1`, [id], function(err) {
+            if (err) throw `Database ERROR ${err}`
+
+            return callback()
         })
     }
 }

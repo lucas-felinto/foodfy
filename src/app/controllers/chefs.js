@@ -1,34 +1,63 @@
 const Chef = require("../models/chef")
-const database = require('../../config/db')
+const Recipe = require('../models/recipe')
 
 module.exports = {
     index (req, res) {
 
-        database.query (`
-            SELECT chefs.*, count(recipes) AS total_recipes
-            FROM chefs 
-            LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
-            GROUP BY chefs.id`, function (err, results) {
-                if (err) throw `DATABASE ${err}`
-
-                return res.render("admin/chefs/chefs", { chefs: results.rows })
-            }
-        )
+        Chef.all(function (chefs) {
+            return res.render("admin/chefs/chefs", { chefs })
+        })
+        
     },
     create (req, res) {
+
         return res.render("admin/chefs/create")
+        
     }, 
     post (req, res) {
+
         Chef.create(req.body, function() {
             return res.redirect("/admin/chefs")
         }) 
+
     },
     show (req, res) {
         
         Chef.find(req.params.id, function (chef) {
             if (!chef) return res.send("Chef Not Found!")
-            
-            return res.render("admin/chefs/chef", { chef })
+
+            Recipe.recipeInformations(function (recipes) {
+
+                return res.render("admin/chefs/chef", { chef, recipes })
+            })
         })
+
+    },
+    edit (req, res) {
+
+        Chef.find(req.params.id, function (chef) {
+            if (!chef) return res.send("Chef Not Found!")
+
+            Recipe.recipeInformations(function (recipes) {
+
+                return res.render("admin/chefs/edit", { chef, recipes })
+            })
+        })
+
+    },
+    put (req, res) {
+        
+        Chef.update(req.body, function() {
+            
+            return res.redirect(`/admin/chefs/${req.body.id}`)
+        })
+    },
+    delete (req, res) {
+
+        Chef.delete(req.body.id, function() {
+
+            return res.redirect("/admin/chefs")
+        })
+
     }
 }

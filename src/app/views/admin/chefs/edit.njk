@@ -1,0 +1,62 @@
+{% extends "admin/layout_admin.njk" %}
+
+{% block content %}
+
+<div class="create-layout">
+
+    <form id="form-delete" action="/admin/chefs/?_method=DELETE" method="POST">
+        <button type="submit" class="button-delete chef-delete">Deletar</button>
+        <input type="hidden" name="id" value="{{ chef.id }}">
+    </form>
+
+    <form class="form" action="/admin/chefs/?_method=PUT" method="POST">
+        <input type="hidden" name="id" value="{{ chef.id }}">
+
+        <p class="p1">Criando chef</p>
+
+        <button type="submit" class="button-save chef-button">Salvar Chef</button>
+
+        <div class="name_chef">
+            <p>Nome</p>
+            <input type="text" name="chef_name" value="{{chef.chef_name}}">
+        </div>
+        <div class="img_chef">
+            <p>Avatar</p>
+            <input type="url" name="avatar_url" value="{{chef.avatar_url}}">
+        </div>
+        <p style="color: red; font-weight: normal" class="hiden">
+            Você não pode excluir um chef que possui receita!
+        </p>
+
+
+    </form>
+</div>
+
+<script>
+
+if ( {{chef.total_recipes}} >= 1) {
+
+    const showAlert = document.querySelector('.hiden')
+    const buttonDelete = document.querySelector('.button-delete')
+    buttonDelete.addEventListener("click", function(event){
+        showAlert.classList.remove('hiden')
+        event.preventDefault()
+    })
+
+}
+
+const formDelete = document.querySelector("#form-delete")
+formDelete.addEventListener("submit", function(event){
+    const confirmation = confirm("Delete?")
+        if (!confirmation) {
+            event.preventDefault()
+        }
+})
+
+</script>
+
+{% endblock %}
+
+
+        
+        

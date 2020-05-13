@@ -1,18 +1,18 @@
 <button type="submit" class="button-save">Salvar</button>
         <div class="img-url">
             <p>Imagem da receita</p>
-            <input type="url" name="image" value="{{recipe[index].img_url}}">
+            <input type="url" name="image" value="{{recipe.image}}">
         </div>
         <div class="titulo_receita">
             <p>Título da Receita</p>
-            <input type="text" name="title" value="{{recipe[index].titulo_receita}}">
+            <input type="text" name="title" value="{{recipe.title}}">
         </div>
         <div class="chef_name">
             <p>Nome do Chef</p>
             <select name="chef_id">
                     <option>Selecione um Chef</option>                    
                 {% for chef in chefOptions %}
-                    <option value="{{chef.id}}">{{chef.chef_name}}</option>                    
+                    <option value="{{chef.id}}" {% if recipe.chef_id == chef.id  %} selected {% endif %}>{{chef.chef_name}}</option>                    
                 {% endfor %}
             </select>
         </div>
@@ -20,8 +20,8 @@
             <p>Ingredientes</p>
             <div class="ing">
                 {% if recipe %}
-                    {% for ingrediente in recipe[index].ingredientes %}
-                        <input type="text" name="ingredients[]" value="{{ingrediente}}">
+                    {% for ingredient in recipe.ingredients %}
+                        <input type="text" name="ingredients[]" value="{{ingredient}}">
                     {% endfor %}
                 {% else %}
                     <input type="text" name="ingredients[]">
@@ -33,8 +33,8 @@
             <p>Modo de Preparo</p>
             <div class="prep">
                 {% if recipe %}
-                    {% for passo in recipe[index].passo %}
-                        <input type="text" name="preparation[]" value="{{ passo }}">
+                    {% for preparation in recipe.preparation %}
+                        <input type="text" name="preparation[]" value="{{ preparation }}">
                     {% endfor %}
                 {% else %}
                     <input type="text" name="preparation[]">
@@ -44,6 +44,5 @@
         <a class="p3">Adicionar novo passo</a>
         <div class="info-add">
             <p>Informações Adicionais</p>
-            <textarea name="information">{{recipe[index].informations}}</textarea>
+            <textarea name="information">{{recipe.information}}</textarea>
         </div>
-
