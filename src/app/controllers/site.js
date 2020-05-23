@@ -5,36 +5,30 @@ module.exports = {
     about (req, res) {
         return res.render("site/about")
     },
-    recipes (req, res) {
-        Recipe.recipeInformations(function (recipes) {
-            return res.render("site/recipes", { recipes: recipes })
-
-        })
+    async recipes (req, res) {
+        let recipes = (await Recipe.recipeInformations()).rows
+        return res.render("site/recipes", { recipes })
     },
-    recipe (req, res) {
-
-        Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) return res.redirect("/not-found")
-
-            return res.render("site/recipe", {recipe} )
-        })
-
+    async recipe (req, res) {
+        const { id } = req.params
+        let recipe = (await Recipe.find(id)).rows[0]
+        if (!recipe) return res.redirect("/not-found")
+            
+        return res.render("site/recipe", {recipe} )
     }, 
-    chefs (req, res) {
-        Chef.all(function (chefs) {
-            return res.render("site/chefs", { chefs })
-        })
+    async chefs (req, res) {
+        let chefs = (await Chef.all()).rows
+        return res.render("site/chefs", { chefs })
     },
-    chef (req, res) {
+    async chef (req, res) {
+        const { id } = req.params 
+        let chef = (await Chef.find(id)).rows[0] 
+        if (!chef) return res.redirect("/not-found")
 
-        Chef.find(req.params.id, function (chef) {
-            if (!chef) return res.redirect("/not-found")
+        // let recipes = (await Recipe.recipeInformations).rows
+        // Arrumar a variável recipes
 
-            Recipe.recipeInformations(function (recipes) {
-
-            return res.render("site/chef", {chef, recipes} )
-            })
-        })
+        return res.render("admin/chefs/chef", { chef })
     },
     search (req, res) {
         

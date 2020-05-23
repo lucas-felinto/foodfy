@@ -2,7 +2,7 @@ const database = require('../../config/db')
 const { date } = require('../../lib/utils')
 
 module.exports = {
-    create (data, callback) {
+    create (data) {
 
         const query = `
             INSERT INTO recipes (
@@ -26,43 +26,24 @@ module.exports = {
             data.chef_id
         ]
 
-        database.query(query, values, function (err, results) {
-            if (err) throw `DATABASE ERROR ${err}`
-
-            callback(results.rows[0])
-        })
+        return database.query(query, values)
     },
-    chefSelectOptions (callbcack) {
-        database.query(`
-            SELECT chef_name, id FROM chefs 
-        `, function (err, results) {
-            if (err) throw `DATABASE ${err}`
-
-            return callbcack(results.rows)
-        })
+    chefSelectOptions () {
+        return database.query(`SELECT chef_name, id FROM chefs `)
     },
-    recipeInformations (callback) {
-        database.query(`
+    recipeInformations () {
+        return database.query(`
             SELECT recipes.*, chefs.chef_name AS chef_name
             FROM recipes
             LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-            `
-            , function (err, results) {
-                if (err) throw `Database ERROR ${err}`
-
-                callback(results.rows)
-        })
+            `)
     },
-    find (id, callback) {
-        database.query(` 
+    find (id) {
+        return database.query(` 
         SELECT recipes.*, chefs.chef_name AS chef_name
         FROM recipes
         LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
-        WHERE recipes.id = $1`, [id], function (err, results) {
-            if (err) throw `DATABASE ${err}`
-
-            callback(results.rows[0])
-        })
+        WHERE recipes.id = $1`, [id])
     },
     findBy (filter, callback) {
 
@@ -78,7 +59,7 @@ module.exports = {
             })
 
     },
-    update (data, callback) {
+    update (data) {
         
         const query = `
             UPDATE recipes SET
@@ -101,17 +82,9 @@ module.exports = {
             data.id
         ]
 
-        database.query(query, values, function (err, results) {
-            if (err) throw `DATABASE ${err}`
-
-            callback()
-        })
+        return database.query(query, values)
     },
-    delete (id, callback) {
-        database.query(`DELETE FROM recipes WHERE id = $1`, [id], function(err) {
-            if (err) throw `Database ERROR ${err}`
-
-            return callback()
-        })
+    delete (id) {
+        return database.query(`DELETE FROM recipes WHERE id = $1`, [id])
     }
 }

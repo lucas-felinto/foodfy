@@ -2,56 +2,40 @@ const fs = require('fs')
 const Recipe = require('../models/recipe')
 
 module.exports = {
-    index (req, res) {
-
-        Recipe.recipeInformations(function (recipes) {
-            return res.render("admin/recipes/recipes", { recipes })
-        })
-
+    async index (req, res) {
+        let recipes = (await Recipe.recipeInformations()).rows
+        return res.render("admin/recipes/recipes", { recipes })
     },
-    create (req, res) {
-        Recipe.chefSelectOptions(function(options) {
-            return res.render("admin/recipes/create", { chefOptions: options })
-        })
+    async create (req, res) {
+        let chefOptions = (await Recipe.chefSelectOptions()).rows
+        return res.render("admin/recipes/create", { chefOptions })
     },
-    show (req, res) {
+    async show (req, res) {
+        const { id } = req.params
+        let recipe = (await Recipe.find(id)).rows[0]
+        if (!recipe) return res.redirect("/not-found")
 
-        Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) return res.redirect("/not-found")
-
-            return res.render("admin/recipes/recipe", {recipe} )
-        })
-
+        return res.render("admin/recipes/recipe", {recipe} )
     },
-    edit (req, res) {
+    async edit (req, res) {
+        const { id } = req.params 
+        let recipe = (await Recipe.find(id)).rows[0] 
+        if (!recipe) return res.redirect("/not-found")
 
-        Recipe.find(req.params.id, function (recipe) {
-            if (!recipe) res.redirect("/not-found")
+        let chefOptions = (await Recipe.chefSelectOptions()).rows
 
-            Recipe.chefSelectOptions(function(options) {
-
-            return res.render("admin/recipes/edit", {recipe, chefOptions: options } )
-            })
-        })        
-        
+        return res.render("admin/recipes/edit", {recipe, chefOptions } )
     },
-    post (req, res) {
-        Recipe.create(req.body, function() {
-            return res.redirect("/admin/recipes")
-        }) 
+    async post (req, res) {
+        await Recipe.create(req.body)
+        return res.redirect("/admin/recipes")
     }, 
-    put (req, res) {
-
-        Recipe.update(req.body, function() {
-            return res.redirect(`/admin/recipes/${req.body.id}`)
-        }) 
-
+    async put (req, res) {
+        await Recipe.update(req.body)
+        return res.redirect(`/admin/recipes/${req.body.id}`)
     }, 
-    delete (req, res) {
-        
-        Recipe.delete(req.body.id, function() {
-            return res.redirect("/admin/recipes/")
-        })
-
+    async delete (req, res) {
+        await Recipe.delete(req.body.id)
+        return res.redirect("/admin/recipes/")
     }
 }

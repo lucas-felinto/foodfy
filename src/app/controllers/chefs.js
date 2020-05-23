@@ -2,62 +2,39 @@ const Chef = require("../models/chef")
 const Recipe = require('../models/recipe')
 
 module.exports = {
-    index (req, res) {
-
-        Chef.all(function (chefs) {
-            return res.render("admin/chefs/chefs", { chefs })
-        })
-        
+    async index (req, res) {
+        let chefs = (await Chef.all()).rows
+        return res.render("admin/chefs/chefs", { chefs })
     },
     create (req, res) {
-
         return res.render("admin/chefs/create")
-        
     }, 
-    post (req, res) {
-
-        Chef.create(req.body, function() {
-            return res.redirect("/admin/chefs")
-        }) 
-
+    async post (req, res) {
+        await Chef.create(req.body)
+        return res.redirect("/admin/chefs")
     },
-    show (req, res) {
-        
-        Chef.find(req.params.id, function (chef) {
-            if (!chef) return res.redirect("/not-found")
+    async show (req, res) {
+        const { id } = req.params 
+        let chef = (await Chef.find(id)).rows[0] 
+        if (!chef) return res.redirect("/not-found")
 
-            Recipe.recipeInformations(function (recipes) {
+        let recipes = (await Recipe.recipeInformations()).rows
 
-                return res.render("admin/chefs/chef", { chef, recipes })
-            })
-        })
-
+        return res.render("admin/chefs/chef", { chef, recipes })
     },
-    edit (req, res) {
+    async edit (req, res) {
+        const { id } = req.params 
+        let chef = (await Chef.find(id)).rows[0] 
+        if (!chef) return res.redirect("/not-found")
 
-        Chef.find(req.params.id, function (chef) {
-            if (!chef) return res.redirect("/not-found")
-
-            Recipe.recipeInformations(function (recipes) {
-
-                return res.render("admin/chefs/edit", { chef, recipes })
-            })
-        })
-
+        return res.render("admin/chefs/edit", { chef })
     },
-    put (req, res) {
-        
-        Chef.update(req.body, function() {
-            
-            return res.redirect(`/admin/chefs/${req.body.id}`)
-        })
+    async put (req, res) {
+        await Chef.update(req.body)
+        return res.redirect(`/admin/chefs/${req.body.id}`)
     },
-    delete (req, res) {
-
-        Chef.delete(req.body.id, function() {
-
-            return res.redirect("/admin/chefs")
-        })
-
+    async delete (req, res) {
+        await Chef.delete(req.body.id)
+        return res.redirect("/admin/chefs")
     }
 }
