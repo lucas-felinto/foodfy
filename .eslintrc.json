@@ -8,6 +8,8 @@
     "extends": [
         "airbnb-base"
     ],
+    "indent": ["error", "tab"],
+    "tabWidth": 2,
     "parserOptions": {
         "ecmaVersion": 12
     },

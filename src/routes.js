@@ -1,41 +1,40 @@
 const express = require('express');
-const site = require('./app/controllers/site');
-const recipes = require('./app/controllers/recipes');
-const chefs = require('./app/controllers/chefs');
+const SiteController = require('./app/controllers/SiteController');
+const RecipeController = require('./app/controllers/RecipeController');
+const ChefController = require('./app/controllers/ChefController');
 
 const routes = express.Router();
 
 // site
 routes.get('/', (req, res) => res.render('site/home'));
-routes.get('/site/about', site.about);
-routes.get('/site/recipes', site.recipes);
-routes.get('/site/recipes/:id', site.recipe);
-routes.get('/site/chefs', site.chefs);
-routes.get('/site/chefs/:id', site.chef);
-routes.get('/site/search', site.search);
+routes.get('/site/about', SiteController.about);
+routes.get('/site/recipes', SiteController.recipes);
+routes.get('/site/recipes/:id', SiteController.recipe);
+routes.get('/site/chefs', SiteController.chefs);
+routes.get('/site/chefs/:id', SiteController.chef);
+routes.get('/site/search', SiteController.search);
 
 // admin
 
 // recipes
-routes.post('/admin/recipes', recipes.post);
-routes.put('/admin/recipes', recipes.put);
-routes.delete('/admin/recipes', recipes.delete);
-
 routes.get('/admin', (req, res) => res.redirect('/admin/recipes'));
-routes.get('/admin/recipes', recipes.index);
-routes.get('/admin/recipes/create', recipes.create);
-routes.get('/admin/recipes/:id', recipes.show);
-routes.get('/admin/recipes/:id/edit', recipes.edit);
+routes.get('/admin/recipes', RecipeController.index);
+routes.post('/admin/recipes', RecipeController.post);
+routes.put('/admin/recipes', RecipeController.put);
+routes.delete('/admin/recipes', RecipeController.delete);
+routes.get('/admin/recipes/create', RecipeController.create);
+routes.get('/admin/recipes/:id', RecipeController.show);
+routes.get('/admin/recipes/:id/edit', RecipeController.edit);
 
 // chefs
-routes.post('/admin/chefs', chefs.post);
-routes.put('/admin/chefs', chefs.put);
-routes.delete('/admin/chefs', chefs.delete);
+routes.get('/admin/chefs', ChefController.index);
+routes.post('/admin/chefs', ChefController.post);
+routes.put('/admin/chefs', ChefController.put);
+routes.delete('/admin/chefs', ChefController.delete);
+routes.get('/admin/chefs/create', ChefController.create);
+routes.get('/admin/chefs/:id', ChefController.show);
+routes.get('/admin/chefs/:id/edit', ChefController.edit);
 
-routes.get('/admin/chefs', chefs.index);
-routes.get('/admin/chefs/create', chefs.create);
-routes.get('/admin/chefs/:id', chefs.show);
-routes.get('/admin/chefs/:id/edit', chefs.edit);
 
 // NOT FOUND
 routes.get('/not-found', (req, res) => res.render('not-found'));

@@ -1,4 +1,4 @@
-const Database = require('../../config/db');
+const Database = require('../../config/database');
 const { date } = require('../../lib/utils');
 
 module.exports = {
