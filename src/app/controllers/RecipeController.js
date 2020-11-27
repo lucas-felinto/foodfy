@@ -1,4 +1,4 @@
-const RecipeModel = require('../models/recipe');
+const RecipeModel = require('../models/Recipe');
 
 module.exports = {
   async index(req, res) {
